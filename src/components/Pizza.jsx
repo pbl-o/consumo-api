@@ -6,7 +6,11 @@ const Pizza = () => {
   const [apiInfoPizza, setApiInfoPizza] = useState([]);
 
   useEffect(() => {
-    apiFetcher("http://localhost:5000/api/pizzas/p001", 'Single pizza', setApiInfoPizza);
+    apiFetcher(
+      "http://localhost:5000/api/pizzas/p001",
+      "Single pizza",
+      setApiInfoPizza
+    );
   }, []);
 
   return (
@@ -17,7 +21,9 @@ const Pizza = () => {
           img={apiInfoPizza.img}
           price={apiInfoPizza.price}
           ingredients={apiInfoPizza.ingredients?.map((item, index) => (
-            <li className="list-group-item" key={index}>🍕{item}</li>
+            <li className="list-group-item" key={index}>
+              🍕{item}
+            </li>
           ))}
           description={apiInfoPizza.desc}
         />

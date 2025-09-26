@@ -27,7 +27,11 @@ const Home = () => {
               price={item.price}
               img={item.img}
               ingredients={item.ingredients.map((ing) => {
-                return <li className="list-group-item" key={ing}>🍕{ing}</li>;
+                return (
+                  <li className="list-group-item" key={ing}>
+                    🍕{ing}
+                  </li>
+                );
               })}
             />
           );
