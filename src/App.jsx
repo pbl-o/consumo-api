@@ -24,7 +24,7 @@ Para el Login, el email "almacenado" es: 'email' y la contraseña: 'thepassword'
  */
 
 function App() {
-  let visible = "pizza";
+  let visible = "home";
 
   return (
     <>
