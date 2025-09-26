@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import MyNavbar from "./components/Navbar.jsx";
+import Home from "./components/Home.jsx";
+import Footer from "./components/Footer.jsx";
+import Register from "./components/Register.jsx";
+import Login from "./components/Login.jsx";
+import Cart from "./components/Cart.jsx";
+import Pizza from "./components/Pizza.jsx";
+
+/* 
+
+Como no está indicado en las instrucciones el conectar los botones con las secciones de la app, coloqué temporariamente un "selector" para facilitar el observar los contenidos requeridos de forma aislada.
+  
+//Soluciones provisorias: 
+
+App.jsx  
+Cambiar el contenido de visible a 'home' para visualizar al componente home, 'register' para visualizar al componente register, 'login' para el componente login y 'pizza' para 
+ver la información obtenida de un servidor local sobre una pizza en específico.
+
+Login.jsx
+Para el Login, el email "almacenado" es: 'email' y la contraseña: 'thepassword'
+
+ */
 
 function App() {
-  const [count, setCount] = useState(0)
+  let visible = "pizza";
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <MyNavbar />
+      {visible === "home" && <Home />}
+      {visible === "register" && <Register />}
+      {visible === "login" && <Login />}
+      {visible === "cart" && <Cart/>}
+      {visible === "pizza" && <Pizza/>}
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
