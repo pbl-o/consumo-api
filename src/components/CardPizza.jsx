@@ -12,7 +12,7 @@ const CardPizza = ({ name, img, price, ingredients, description }) => {
     <>
       <div className="col">
         <Card className="text-center">
-          <Card.Img variant="top" src={img} className="" />
+          <Card.Img variant="top" src={img}/>
           <Card.Body>
             <Card.Title className="text-capitalize">{name}</Card.Title>
           </Card.Body>
